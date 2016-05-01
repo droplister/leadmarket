@@ -25,6 +25,10 @@ Route::post('capture', [
     'as' => 'post::lead', 'uses' => 'CaptureController@postLead'
 ]);
 
+Route::get('success', [
+    'as' => 'success', 'uses' => 'CaptureController@getSuccess'
+]);
+
 // Front-End (Marketer)
 
 Route::get('market', [

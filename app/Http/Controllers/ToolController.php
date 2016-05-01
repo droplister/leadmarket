@@ -17,7 +17,7 @@ class ToolController extends Controller
     public function getSimulate()
     {
         Artisan::call('insert:rows', [
-            'count' => 500
+            'count' => 315
         ]);
 
         return redirect(route('admin::index'));

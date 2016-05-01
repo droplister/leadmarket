@@ -33,6 +33,6 @@ class MarketController extends Controller
 
         $lead->purchase()->update(['user_id' => $request->user()->id, 'paid_at' => Carbon::now()]);
 
-        return redirect(route('contacts'));
+        return redirect(route('contacts'))->with('success', $lead->id);
     }
 }

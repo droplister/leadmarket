@@ -28,6 +28,7 @@ $factory->define(App\Lead::class, function (Faker\Generator $faker) {
         'city' => $faker->city,
         'state' => $faker->stateAbbr,
         'zipcode' => $faker->postcode,
+        'sha256' => "fe7ca4ea0a8715222bf5f4d6c6d1bb962ddc1189f072c6c7e2d20688b1083e81",
         'created_at' => $faker->dateTimeThisMonth($max = 'now'),
     ];
 });

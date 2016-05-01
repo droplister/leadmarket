@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $leads = Auth::user()->leads()->paginate(25);
+        $leads = Auth::user()->leads()->orderBy('paid_at', 'desc')->paginate(25);
 
         return view('contacts', compact('leads'));
     }

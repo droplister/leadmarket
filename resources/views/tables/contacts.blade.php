@@ -8,8 +8,9 @@
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
-            <th>Income</th> 
-            <th>Blockchain</th>  
+            <th>Income</th>
+            <th>Purchased</th>
+            <th>Check Hash</th>  
         </tr>
       </thead>
       <tbody>
