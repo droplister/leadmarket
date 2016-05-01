@@ -31,11 +31,32 @@ Route::get('market', [
     'as' => 'market::index', 'uses' => 'MarketController@index'
 ]);
 
+// Back-End (Marketer)
+
+Route::get('purchase/{lead}', [
+    'as' => 'purchase', 'uses' => 'MarketController@checkout'
+]);
+
+Route::get('contacts', [
+    'as' => 'contacts', 'uses' => 'UserController@index'
+]);
+
 // Back-End (Admin)
 
 Route::get('admin', [
     'as' => 'admin::index', 'uses' => 'AdminController@index'
 ]);
+
+// Authentication
+
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration
+
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // Hackathon (Demo Tools)
 

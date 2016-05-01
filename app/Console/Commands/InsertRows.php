@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Lead;
+use App\Purchase;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
@@ -32,7 +33,12 @@ class InsertRows extends Command
     {
         $c = $this->argument('count');
         for ($i=0; $i < $c; ++$i) {
-            factory(Lead::class)->create();
+            $lead = factory(Lead::class)->create();
+            $purchase = Purchase::create([
+                'lead_id' => $lead->id,
+                'price' => 1,
+                'status' => 'available'
+            ]);
             $this->comment('Lead Created');
         }
         $this->comment('Completed');

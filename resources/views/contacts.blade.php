@@ -8,7 +8,7 @@
 
     <br />
 
-    @include('tables.market')
+    @include('tables.contacts')
 
     {!! $leads->render() !!}
 

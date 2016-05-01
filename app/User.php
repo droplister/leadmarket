@@ -11,12 +11,12 @@ class User extends Authenticatable
     ];
 
     protected $hidden = [
-        'password',
+        'password', 'remember_token'
     ];
 
     public function leads()
     {
-        return $this->belongsToMany(Lead::class);
+        return $this->belongsToMany(Lead::class, 'purchases');
     }
 
     public function purchases()
