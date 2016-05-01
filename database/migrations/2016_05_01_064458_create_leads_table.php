@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRowsTable extends Migration
+class CreateLeadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateRowsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rows', function (Blueprint $table) {
+        Schema::create('leads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email');
@@ -20,8 +20,10 @@ class CreateRowsTable extends Migration
             $table->string('city');
             $table->string('state');
             $table->char('zipcode', 5);
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->string('sha256')->nullable();
+            $table->string('tx_id')->nullable();
+            $table->boolean('sold')->default(0);
+            $table->timestamps();
         });
     }
 
@@ -32,6 +34,6 @@ class CreateRowsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('rows');
+        Schema::drop('leads');
     }
 }
