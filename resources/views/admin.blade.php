@@ -2,7 +2,7 @@
 
 @section('content')
 
-          <h2 class="sub-header">Database View <small>Original</small></h2>
+          <h2 class="sub-header">Admin Area <small>Private</small></h2>
 
           <div class="row">
               <div class="col-sm-6">

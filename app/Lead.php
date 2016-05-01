@@ -15,4 +15,9 @@ class Lead extends Model
     {
         return $this->hasOne(Purchase::class);
     }
+
+    public function scopeForSale($query)
+    {
+        return $query->where('sold', 0);
+    }
 }

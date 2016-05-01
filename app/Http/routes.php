@@ -15,13 +15,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('results', 'ResultController@getResults');
+// Front-End (Consumer)
 
-Route::get('capture', 'ToolController@getCapture');
-Route::get('market', 'ToolController@getMarket');
+Route::get('capture', [
+    'as' => 'lead::capture', 'uses' => 'CaptureController@getLead'
+]);
 
-Route::get('database', 'ToolController@getDatabase');
-Route::get('replicator', 'ToolController@getReplicator');
+Route::post('capture', [
+    'as' => 'post::lead', 'uses' => 'CaptureController@postLead'
+]);
+
+// Front-End (Marketer)
+
+Route::get('market', [
+    'as' => 'market::index', 'uses' => 'MarketController@index'
+]);
+
+// Back-End (Admin)
+
+Route::get('admin', [
+    'as' => 'admin::index', 'uses' => 'AdminController@index'
+]);
+
+// Hackathon (Demo Tools)
 
 Route::get('simulate', 'ToolController@getSimulate');
 Route::get('cleanup', 'ToolController@getCleanup');

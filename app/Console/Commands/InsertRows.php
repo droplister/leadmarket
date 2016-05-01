@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Row;
+use App\Lead;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
@@ -32,8 +32,8 @@ class InsertRows extends Command
     {
         $c = $this->argument('count');
         for ($i=0; $i < $c; ++$i) {
-            factory(Row::class)->create();
-            $this->comment('Row Inserted');
+            factory(Lead::class)->create();
+            $this->comment('Lead Created');
         }
         $this->comment('Completed');
     }
